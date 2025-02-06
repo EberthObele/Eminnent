@@ -1,0 +1,86 @@
+ <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">Eminnent</div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#orders">Customized Orders</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="overlay"></div>
+
+    <section id="home">
+        <div class="bg-effect bg-effect-1"></div>
+        <div class="section-content">
+            <h1 class="section-title welcome">Welcome</h1>
+            <p class="section-description">Welcome again to our shop, we hope you can find our best cloths.</p>
+          
+          <div class="image-slider">
+            <div class="slider-images">
+             <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/9b13973074df4dd78c122e5b0a3f0c0c.png?x-oss-process=style/hugepod-product-webp" alt="Slide 1" class="slider-image">
+                <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/80451a60bb4d4d18a9d709c09a6e4084.png?x-oss-process=style/hugepod-product-webp" alt="Slide 2" class="slider-image">
+                <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/ea0a7936158f45b095cebdf84749aaaf.png?x-oss-process=style/hugepod-product-webp" alt="Slide 3" class="slider-image">
+                <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/501db629ee944d738d592c374ee9ce4d.png?x-oss-process=style/hugepod-product-webp" alt="Slide 4" class="slider-image">
+                <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/1454e498e1c54421a2966d9f4f2bb4b3.png?x-oss-process=style/hugepod-product-webp" alt="Slide 5" class="slider-image">
+                <img src="https://files.tapstitch.com/popshowroom/material/custom_printing/48e895b674a3490385f923e239545a6e.png?x-oss-process=style/hugepod-product-webp" alt="Slide 6" class="slider-image"> 
+            </div>
+            <div class="slider-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="bg-effect bg-effect-2"></div>
+        <div class="section-content">
+            <h1 class="section-title about">About Us</h1>
+            <p class="section-description">We are a trying to bring you the freshness and Chill Warlike cloths to make you feel comfty and cool. Our proyect started January 2025. (This section is not finished)</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="bg-effect bg-effect-1"></div>
+        <div class="section-content">
+            <h1 class="section-title product">Products</h1>
+           <a href= "https://codepen.io/EberthObele/full/OPLqKbE"> <p class="section-description">Go to our shop!</p> </a>
+        </div>
+    </section>
+
+    <section id="orders">
+        <div class="bg-effect bg-effect-2"></div>
+        <div class="section-content">
+            <h1 class="section-title orders">Customized Orders</h1>
+            <p class="section-description">Run your imagination throught our customized hoodies & T-Shirts services to be updated nowadays.(These section is not finished)</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="bg-effect bg-effect-1"></div>
+        <div class="section-content">
+            <h1 class="section-title contact">Contact</h1>
+            <p class="section-description">Let's create something amazing together</p>
+        </div>
+      
+      
+    </section>
+
+<div class="credits">
+		<div class="responsive-container">
+		<h3>Eminnent</h3>
+	<a href='https://www.Eminnent.com/' target="_blank">Check out our homepage - www.Eminment.com</a>
+		</div>
+</div>
