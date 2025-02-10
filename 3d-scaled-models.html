@@ -1,0 +1,80 @@
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.5.1/dist/es-module-shims.js" crossorigin="anonymous"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+    }
+  }
+</script>
+Select thickness:<br><input id="thickness" type="range" min="1" max="100" value="50">
+
+<script>
+  import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+console.clear();
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color("gainsboro");
+
+const camera = new THREE.PerspectiveCamera(30, innerWidth / innerHeight);
+camera.position.set(20, 40, 20);
+camera.lookAt(scene.position);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+
+window.addEventListener("resize", () => {
+    camera.aspect = innerWidth / innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+});
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+const light = new THREE.DirectionalLight("white", 2);
+light.position.set(1, 1, 1);
+scene.add(light);
+
+// Create hoodie torso with rounded shape
+const torsoGeometry = new THREE.CapsuleGeometry(3, 6, 8, 16);
+const material = new THREE.MeshStandardMaterial({ color: "darkblue", roughness: 0.6, metalness: 0.1 });
+const torso = new THREE.Mesh(torsoGeometry, material);
+torso.position.set(0, 1, 0); // Lowered by -5
+scene.add(torso);
+
+// Create sleeves with more natural positioning
+const sleeveGeometry = new THREE.CylinderGeometry(1.5, 1.5, 8, 32);
+const leftSleeve = new THREE.Mesh(sleeveGeometry, material);
+leftSleeve.position.set(-3.5, 0, 0); // Lowered by -5
+leftSleeve.rotation.z = Math.PI / -6;
+scene.add(leftSleeve);
+
+const rightSleeve = new THREE.Mesh(sleeveGeometry, material);
+rightSleeve.position.set(3.5, 0, 0); // Lowered by -5
+rightSleeve.rotation.z = -Math.PI / -6;
+scene.add(rightSleeve);
+
+// Create hoodie hood with smoother connection
+const hoodShape = new THREE.Shape();
+hoodShape.moveTo(1.5, 5);
+hoodShape.quadraticCurveTo(3, 9, 0, 11);
+hoodShape.quadraticCurveTo(-3, 9, -1.5, 5);
+
+const hoodExtrudeSettings = { depth: 5, bevelEnabled: true, bevelSize: 1.5, bevelSegments: 8 };
+const hoodGeometry = new THREE.ExtrudeGeometry(hoodShape, hoodExtrudeSettings);
+const hood = new THREE.Mesh(hoodGeometry, material);
+hood.position.set(0, 2, -2.5); // Lowered by -5
+scene.add(hood);
+
+function animate() {
+    controls.update();
+    scene.rotation.y += 0.01; // Slow rotation
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
