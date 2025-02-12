@@ -120,7 +120,8 @@
 		</div>
 </div>
 
-<style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 * { 
   margin: 0;
@@ -136,9 +137,6 @@
     --glass-bg: rgba(255, 255, 255, 0.05);
   --border: 2px solid rgba(255, 255, 255, 0.1);
     --shadow: 0 1px 2px 0 rgba(31, 38, 135, 0.37);
-}
-html {
-  scroll-behavior: smooth;
 }
 
 body { 
@@ -524,11 +522,12 @@ a {
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px,  1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
 }
 
 .product-card {
@@ -537,6 +536,8 @@ a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 auto;
+    width: 300px;
 }
 
 .product-card:hover {
@@ -572,6 +573,36 @@ a {
 
 .product-card:hover .product-name {
     color: #007bff;
+}
+
+.custom-order-btn {
+    background: var(--gradient);
+    border: none;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+}
+
+.custom-order-btn:hover {
+    background: #1b3a5b; /* Slightly darker gradient for hover effect */
+    transform: scale(1.05);
+}
+
+.custom-order-btn:active {
+    transform: scale(0.98);
+}
+
+#products .section-content {
+    display: flex;
+    flex-direction: column; /* Stack elements */
+    align-items: center; 
+    text-align: center;
 }
 </style>
 
